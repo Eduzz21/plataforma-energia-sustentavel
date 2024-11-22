@@ -92,6 +92,8 @@ Em resumo, a arquitetura de microservices atende às necessidades do sistema por
 ### Diagrama de Componentes
 O **Diagrama de Componentes** mostra como as partes principais do sistema estão conectadas. Ele inclui os seguintes componentes:
 
+![Diagrama de Componentes](./diagrama_de_componentes.png)
+
 - **Frontend**: É a interface do usuário, ou seja, o que as pessoas veem e interagem ao usar a plataforma. O Frontend envia as solicitações para o Backend.
 - **Backend**: É o "cérebro" do sistema, onde os dados são processados e gerenciados. O Backend se comunica com os dispositivos IoT, como os medidores inteligentes, para pegar os dados de consumo em tempo real. Ele também acessa o **Banco de Dados** para recuperar o histórico de consumo do usuário.
 - **Dispositivos IoT**: São os medidores inteligentes e outros sensores conectados que fornecem os dados de consumo energético em tempo real.
@@ -128,7 +130,7 @@ Esses três diagramas — **Componentes**, **Sequência** e **Classes** — forn
 
 O sistema é dividido em várias classes que lidam com as funcionalidades principais, incluindo o gerenciamento do usuário, consumo de energia, dispositivos IoT, relatórios e notificações.
 
-```plaintext
+
 Classe Usuario:
   # A classe Usuario é responsável por gerenciar as informações do usuário, incluindo dados pessoais e as metas de consumo de energia.
   Atributos:
@@ -263,3 +265,31 @@ Depois, tem a **escalabilidade vertical**, que é como melhorar o que já temos.
 E por último, temos o uso de **cache**, que é uma técnica que deixa o sistema mais rápido. Ao guardar dados temporários, evitamos acessar o banco de dados o tempo todo, o que ajuda a diminuir a carga nos servidores e deixa tudo mais ágil para o usuário.
 
 Essa é a estratégia para garantir que a plataforma cresça de maneira eficiente e sem comprometer a performance!
+
+### Protótipo de Navegação e Interface
+
+O protótipo da **Plataforma de Gerenciamento de Energia Sustentável** apresenta o fluxo de navegação e a organização visual das principais telas da solução. Ele foi projetado para oferecer uma experiência intuitiva e funcional aos usuários. A seguir, estão os principais componentes do protótipo:
+### Link para Acessa-lo : https://www.figma.com/design/kDD8oP8Sc5LVtRp3Ibb2OJ/Untitled?node-id=0-1&t=b2tP3trcmfR9wvJ1-1
+1. **Tela Principal**  
+   - Visão geral do consumo de energia.  
+   - Gráficos interativos, como repartição de consumo por categoria e tendências históricas.  
+   - Dicas rápidas para economia de energia baseadas nos hábitos do usuário.
+
+2. **Dados Históricos de Consumo**  
+   - Apresentação de gráficos detalhados do consumo ao longo do tempo.  
+   - Comparativos de metas estabelecidas pelo usuário e progresso alcançado.
+
+3. **Configurações**  
+   - Ajustes de preferências de notificações, como alertas de consumo elevado.  
+   - Opções de personalização da interface, incluindo modo escuro.
+
+4. **Produtos Sustentáveis e Recursos Educacionais**  
+   - Lista de produtos sustentáveis que ajudam a reduzir o consumo energético.  
+   - Artigos educacionais categorizados sobre práticas de sustentabilidade.  
+   - Links para recursos adicionais e informações da comunidade.
+
+5. **Fluxo de Navegação**  
+   - As telas são interligadas de forma lógica e fluida.  
+   - O menu persistente permite o acesso rápido às funcionalidades principais.
+
+Este protótipo serve como base para a implementação da interface da plataforma, priorizando usabilidade, acessibilidade e uma experiência de usuário eficiente.
