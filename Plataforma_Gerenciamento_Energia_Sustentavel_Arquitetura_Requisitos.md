@@ -136,19 +136,23 @@ Esses três diagramas — **Componentes**, **Sequência** e **Classes** — forn
 O sistema é dividido em várias classes que lidam com as funcionalidades principais, incluindo o gerenciamento do usuário, consumo de energia, dispositivos IoT, relatórios e notificações.
 
 
-# Classe Usuario:
-  # A classe Usuario é responsável por gerenciar as informações do usuário, incluindo dados pessoais e as metas de consumo de energia.
+### Classe Usuário
+
+A classe **Usuário** é responsável por gerenciar as informações do usuário, incluindo dados pessoais e as metas de consumo de energia.
+
+```plaintext
+Classe Usuario:
   Atributos:
-    nome  # Nome do usuário
-    email  # E-mail do usuário
+    nome              # Nome do usuário
+    email             # E-mail do usuário
     metas_de_consumo  # Definido pelo usuário para controlar o consumo de energia
-    alertas  # Armazena os alertas enviados ao usuário
+    alertas           # Armazena os alertas enviados ao usuário
 
   Métodos:
     função cadastrarUsuario(nome, email):  # Registra o usuário no sistema com seu nome e e-mail.
       this.nome = nome
       this.email = email
-      criarNotificação("Bem-vindo ao sistema de gerenciamento de energia!") 
+      criarNotificação("Bem-vindo ao sistema de gerenciamento de energia!")
 
     função configurarMeta(consumo_ideal):  # Define a meta de consumo de energia do usuário.
       this.metas_de_consumo = consumo_ideal
@@ -158,13 +162,14 @@ O sistema é dividido em várias classes que lidam com as funcionalidades princi
 
     função visualizarRelatorio():  # Gera um relatório com base no consumo do usuário.
       retorne Relatorio.gerarRelatorio(this.nome, this.metas_de_consumo)
+```
 
-   Descrição:
+  # Descrição:
   A classe Usuario é fundamental porque permite que o usuário registre seus dados e defina metas de consumo de energia. 
   Ela também gerencia o envio de alertas caso o consumo ultrapasse os limites definidos. 
   Além disso, o usuário pode visualizar um relatório detalhado de seu consumo.
 
-# Classe Consumo:
+## Classe Consumo:
    A classe Consumo lida com o registro de consumo de energia. Ela verifica se o consumo ultrapassa a meta definida pelo usuário e envia alertas se necessário.
   Atributos:
     usuario  # O usuário associado ao consumo
@@ -187,18 +192,20 @@ O sistema é dividido em várias classes que lidam com as funcionalidades princi
       se this.consumo_kWh > usuario.metas_de_consumo:
         usuario.receberAlerta("Limite de consumo excedido!")
 ```
-  Descrição:
+ # Descrição:
   A classe Consumo é responsável por registrar e controlar o consumo de energia do usuário. Ela verifica automaticamente se 
   o consumo ultrapassa a meta definida e, caso necessário, envia um alerta ao usuário. 
 
-Classe DispositivoIoT:
-  # A classe DispositivoIoT lida com dispositivos inteligentes de medição de energia. Ela registra dispositivos e mede o consumo de energia em tempo real.
+## Classe DispositivoIoT:
+
+  ```plaintext
+   A classe DispositivoIoT lida com dispositivos inteligentes de medição de energia. Ela registra dispositivos e mede o consumo de energia em tempo real.
   Atributos:
-    id_dispositivo  # Identificação única do dispositivo
-    tipo  # Tipo do dispositivo, como medidor de energia
+    id_dispositivo   Identificação única do dispositivo
+    tipo   Tipo do dispositivo, como medidor de energia
     consumo_atual  # Consumo de energia atual medido pelo dispositivo
     
-```plaintext
+
   Métodos:
     função registrarDispositivo(id, tipo):  # Registra um novo dispositivo no sistema.
       this.id_dispositivo = id
@@ -210,11 +217,11 @@ Classe DispositivoIoT:
       retornar this.consumo_atual
 ```
   # Descrição:
-  # A classe DispositivoIoT é responsável por integrar o sistema com dispositivos de medição de energia conectados via IoT. 
-  # Ela coleta dados de consumo em tempo real e os envia para o sistema, ajudando a manter o controle preciso do uso de energia.
+  A classe DispositivoIoT é responsável por integrar o sistema com dispositivos de medição de energia conectados via IoT. 
+ Ela coleta dados de consumo em tempo real e os envia para o sistema, ajudando a manter o controle preciso do uso de energia.
 
-Classe Relatorio:
-  # A classe Relatório gera relatórios detalhados sobre o consumo de energia. Ela também faz sugestões baseadas no consumo em relação às metas do usuário.
+## Classe Relatorio:
+   A classe Relatório gera relatórios detalhados sobre o consumo de energia. Ela também faz sugestões baseadas no consumo em relação às metas do usuário.
   Atributos:
     usuario  # Usuário associado ao relatório
     consumo_total  # Total de consumo de energia
@@ -237,16 +244,18 @@ Classe Relatorio:
   ```
 
   # Descrição:
-  # A classe Relatório tem como objetivo gerar relatórios detalhados sobre o consumo de energia do usuário. 
-  # Caso o consumo tenha ultrapassado a meta, ela também oferece recomendações personalizadas para redução do consumo.
+  A classe Relatório tem como objetivo gerar relatórios detalhados sobre o consumo de energia do usuário. 
+   Caso o consumo tenha ultrapassado a meta, ela também oferece recomendações personalizadas para redução do consumo.
 
-Classe Notificacao:
-  # A classe Notificação envia alertas para o usuário, seja sobre o consumo de energia ou outras mensagens importantes relacionadas ao gerenciamento de energia.
+## Classe Notificacao:
+   A classe Notificação envia alertas para o usuário, seja sobre o consumo de energia ou outras mensagens importantes relacionadas ao gerenciamento de energia.
+   
+   ```plaintext
   Atributos:
     usuario  # Usuário que receberá a notificação
     mensagem  # Mensagem a ser enviada ao usuário
     
-```plaintext
+
   Métodos:
     função enviarNotificacao(usuario, mensagem):  # Envia uma notificação ao usuário com a mensagem fornecida.
       this.usuario = usuario
@@ -256,9 +265,9 @@ Classe Notificacao:
     função exibirNotificacaoNoApp(usuario, mensagem):  # Exibe a notificação no aplicativo do usuário.
       mostrarNaTela(usuario.nome, mensagem)
 ```
-  # Descrição:
-  # A classe Notificação é responsável por enviar mensagens e alertas ao usuário, alertando-o sobre eventos importantes, como 
-  # o ultrapassamento da meta de consumo. Ela garante que o usuário seja sempre informado sobre o status de seu consumo de energia.
+   # Descrição:
+   A classe Notificação é responsável por enviar mensagens e alertas ao usuário, alertando-o sobre eventos importantes, como 
+   o ultrapassamento da meta de consumo. Ela garante que o usuário seja sempre informado sobre o status de seu consumo de energia.
 
 ## Estratégia de Escalabilidade
 
