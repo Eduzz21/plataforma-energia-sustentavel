@@ -103,6 +103,9 @@ O **Diagrama de Componentes** mostra como as partes principais do sistema estão
 Esse diagrama ajuda a visualizar como cada parte do sistema se conecta e trabalha em conjunto.
 
 ### Diagrama de Sequência
+
+![Diagrama de Sequência](./diagrama_de_sequencia.png)
+
 O **Diagrama de Sequência** descreve o passo a passo de como as ações acontecem no sistema, em ordem cronológica. O processo é o seguinte:
 
 1. O **Usuário** acessa o **Frontend**, que é a interface que ele utiliza para interagir com o sistema.
@@ -115,6 +118,8 @@ Esse diagrama deixa claro como as ações se conectam, desde o momento em que o 
 
 ### Diagrama de Classes
 O **Diagrama de Classes** ilustra as principais **entidades** do sistema e como elas se relacionam. As classes principais são:
+
+![Diagrama de Classes](./diagrama_de_classes.png)
 
 - **Usuário**: O usuário do sistema, que pode acessar seus dados de consumo, visualizar relatórios e receber notificações quando o consumo ultrapassar os limites definidos por ele.
 - **Consumo**: Representa os dados de consumo de energia, calculados com base nas leituras dos **Dispositivos IoT**.
@@ -131,7 +136,7 @@ Esses três diagramas — **Componentes**, **Sequência** e **Classes** — forn
 O sistema é dividido em várias classes que lidam com as funcionalidades principais, incluindo o gerenciamento do usuário, consumo de energia, dispositivos IoT, relatórios e notificações.
 
 
-Classe Usuario:
+# Classe Usuario:
   # A classe Usuario é responsável por gerenciar as informações do usuário, incluindo dados pessoais e as metas de consumo de energia.
   Atributos:
     nome  # Nome do usuário
@@ -154,13 +159,13 @@ Classe Usuario:
     função visualizarRelatorio():  # Gera um relatório com base no consumo do usuário.
       retorne Relatorio.gerarRelatorio(this.nome, this.metas_de_consumo)
 
-  # Descrição:
-  # A classe Usuario é fundamental porque permite que o usuário registre seus dados e defina metas de consumo de energia. 
-  # Ela também gerencia o envio de alertas caso o consumo ultrapasse os limites definidos. 
-  # Além disso, o usuário pode visualizar um relatório detalhado de seu consumo.
+   Descrição:
+  A classe Usuario é fundamental porque permite que o usuário registre seus dados e defina metas de consumo de energia. 
+  Ela também gerencia o envio de alertas caso o consumo ultrapasse os limites definidos. 
+  Além disso, o usuário pode visualizar um relatório detalhado de seu consumo.
 
-Classe Consumo:
-  # A classe Consumo lida com o registro de consumo de energia. Ela verifica se o consumo ultrapassa a meta definida pelo usuário e envia alertas se necessário.
+# Classe Consumo:
+   A classe Consumo lida com o registro de consumo de energia. Ela verifica se o consumo ultrapassa a meta definida pelo usuário e envia alertas se necessário.
   Atributos:
     usuario  # O usuário associado ao consumo
     data  # Data em que o consumo foi registrado
@@ -269,7 +274,8 @@ Essa é a estratégia para garantir que a plataforma cresça de maneira eficient
 ### Protótipo de Navegação e Interface
 
 O protótipo da **Plataforma de Gerenciamento de Energia Sustentável** apresenta o fluxo de navegação e a organização visual das principais telas da solução. Ele foi projetado para oferecer uma experiência intuitiva e funcional aos usuários. A seguir, estão os principais componentes do protótipo:
-### Link para Acessa-lo : https://www.figma.com/design/kDD8oP8Sc5LVtRp3Ibb2OJ/Untitled?node-id=0-1&t=b2tP3trcmfR9wvJ1-1
+ Link para Acessa-lo : https://www.figma.com/proto/kDD8oP8Sc5LVtRp3Ibb2OJ/Untitled?node-id=1-549&node-type=canvas&t=ZV7y6sdCuujfautQ-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A549
+
 1. **Tela Principal**  
    - Visão geral do consumo de energia.  
    - Gráficos interativos, como repartição de consumo por categoria e tendências históricas.  
