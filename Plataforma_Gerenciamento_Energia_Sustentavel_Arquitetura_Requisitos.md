@@ -148,7 +148,7 @@ O sistema é dividido em várias classes que lidam com as funcionalidades princi
     função cadastrarUsuario(nome, email):  # Registra o usuário no sistema com seu nome e e-mail.
       this.nome = nome
       this.email = email
-      criarNotificação("Bem-vindo ao sistema de gerenciamento de energia!")
+      criarNotificação("Bem-vindo ao sistema de gerenciamento de energia!") 
 
     função configurarMeta(consumo_ideal):  # Define a meta de consumo de energia do usuário.
       this.metas_de_consumo = consumo_ideal
@@ -170,6 +170,8 @@ O sistema é dividido em várias classes que lidam com as funcionalidades princi
     usuario  # O usuário associado ao consumo
     data  # Data em que o consumo foi registrado
     consumo_kWh  # O valor de consumo registrado em kWh
+    
+```plaintext
 
   Métodos:
     função registrarConsumo(usuario, consumo):  # Registra o consumo de energia do usuário.
@@ -184,10 +186,10 @@ O sistema é dividido em várias classes que lidam com as funcionalidades princi
     função verificarLimiteConsumo(usuario):  # Verifica se o consumo ultrapassa a meta do usuário.
       se this.consumo_kWh > usuario.metas_de_consumo:
         usuario.receberAlerta("Limite de consumo excedido!")
-
-  # Descrição:
-  # A classe Consumo é responsável por registrar e controlar o consumo de energia do usuário. Ela verifica automaticamente se 
-  # o consumo ultrapassa a meta definida e, caso necessário, envia um alerta ao usuário. 
+```
+  Descrição:
+  A classe Consumo é responsável por registrar e controlar o consumo de energia do usuário. Ela verifica automaticamente se 
+  o consumo ultrapassa a meta definida e, caso necessário, envia um alerta ao usuário. 
 
 Classe DispositivoIoT:
   # A classe DispositivoIoT lida com dispositivos inteligentes de medição de energia. Ela registra dispositivos e mede o consumo de energia em tempo real.
@@ -195,7 +197,8 @@ Classe DispositivoIoT:
     id_dispositivo  # Identificação única do dispositivo
     tipo  # Tipo do dispositivo, como medidor de energia
     consumo_atual  # Consumo de energia atual medido pelo dispositivo
-
+    
+```plaintext
   Métodos:
     função registrarDispositivo(id, tipo):  # Registra um novo dispositivo no sistema.
       this.id_dispositivo = id
@@ -205,7 +208,7 @@ Classe DispositivoIoT:
     função medirConsumo(consumo):  # Mede o consumo de energia e retorna o valor.
       this.consumo_atual = consumo
       retornar this.consumo_atual
-
+```
   # Descrição:
   # A classe DispositivoIoT é responsável por integrar o sistema com dispositivos de medição de energia conectados via IoT. 
   # Ela coleta dados de consumo em tempo real e os envia para o sistema, ajudando a manter o controle preciso do uso de energia.
@@ -216,6 +219,8 @@ Classe Relatorio:
     usuario  # Usuário associado ao relatório
     consumo_total  # Total de consumo de energia
     recomendacoes  # Recomendações de redução de consumo, se necessário
+
+```plaintext
 
   Métodos:
     função gerarRelatorio(usuario, consumo_total):  # Gera o relatório completo com consumo e recomendações.
@@ -229,6 +234,7 @@ Classe Relatorio:
         this.recomendacoes.adicionar("Reduzir o uso de energia à noite.")
       senão:
         this.recomendacoes.adicionar("Continue com seu bom uso de energia!")
+  ```
 
   # Descrição:
   # A classe Relatório tem como objetivo gerar relatórios detalhados sobre o consumo de energia do usuário. 
@@ -239,7 +245,8 @@ Classe Notificacao:
   Atributos:
     usuario  # Usuário que receberá a notificação
     mensagem  # Mensagem a ser enviada ao usuário
-
+    
+```plaintext
   Métodos:
     função enviarNotificacao(usuario, mensagem):  # Envia uma notificação ao usuário com a mensagem fornecida.
       this.usuario = usuario
@@ -248,7 +255,7 @@ Classe Notificacao:
 
     função exibirNotificacaoNoApp(usuario, mensagem):  # Exibe a notificação no aplicativo do usuário.
       mostrarNaTela(usuario.nome, mensagem)
-
+```
   # Descrição:
   # A classe Notificação é responsável por enviar mensagens e alertas ao usuário, alertando-o sobre eventos importantes, como 
   # o ultrapassamento da meta de consumo. Ela garante que o usuário seja sempre informado sobre o status de seu consumo de energia.
